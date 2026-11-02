@@ -1,22 +1,8 @@
 "use client";
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import Badge from "react-bootstrap/Badge";
 
-interface DailyMenu {
-  day: string;
-  badge: string;
-  mainDish: string;
-  sideDish: string;
-  vegetable: string;
-  fruit: string;
-  drink: string;
-}
+import { Container, Row, Col, Card, Badge } from "react-bootstrap";
 
-const weeklyMenu: DailyMenu[] = [
+const weeklyMenu = [
   {
     day: "Senin",
     badge: "Hari 1",
@@ -125,7 +111,9 @@ export default function MenuSection() {
                   </div>
                   <div className="small">
                     <span className="text-muted d-block">Minuman:</span>
-                    <span className="badge bg-light text-secondary border">{item.drink}</span>
+                    <Badge bg="light" text="secondary" className="border fw-normal">
+                      {item.drink}
+                    </Badge>
                   </div>
                 </Card.Body>
               </Card>

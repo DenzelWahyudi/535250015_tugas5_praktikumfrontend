@@ -1,18 +1,8 @@
 "use client";
-import React from "react";
-import Carousel from "react-bootstrap/Carousel";
-import Button from "react-bootstrap/Button";
 
-interface SlideItem {
-  badge: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  btnLabel: string;
-  btnTarget: string;
-}
+import { Carousel, Button, Badge } from "react-bootstrap";
 
-const slides: SlideItem[] = [
+const slides = [
   {
     badge: "Program Makan Bergizi Gratis",
     title: "Katering Sehat & Bergizi - PT UNTAR",
@@ -47,12 +37,12 @@ export default function HeroSection() {
           <Carousel.Item key={index}>
             <div
               className="hero-slide"
-              style={{
-                backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url(${item.imageUrl})`,
-              }}
+              style={{ backgroundImage: `url(${item.imageUrl})` }}
             />
-            <Carousel.Caption className="text-start pb-4" style={{ maxWidth: "680px", left: "8%", right: "8%" }}>
-              <span className="badge bg-success mb-2 px-3 py-2">{item.badge}</span>
+            <Carousel.Caption className="hero-caption text-start pb-4">
+              <Badge bg="success" className="mb-2 px-3 py-2 fw-normal">
+                {item.badge}
+              </Badge>
               <h1 className="fw-bold fs-2 text-white mb-2">{item.title}</h1>
               <p className="fs-6 text-light mb-3">{item.description}</p>
               <Button href={item.btnTarget} variant="light" size="sm" className="fw-semibold px-3">

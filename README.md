@@ -1,1 +1,2 @@
-# 535250015_tugas5_praktikumfrontend
+# NIM: 535250015
+# NAMA: Denzel Mark Wahyudi
